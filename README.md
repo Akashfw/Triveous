@@ -31,19 +31,19 @@ The API will be available at http://localhost:3000.
 ###API Endpoints
 
 #User login/register
-Endpoints: login /api/user/login
-           register /api/user/register
-Method: POST
-Input : { 
+  -Endpoints: login /api/user/login
+             register /api/user/register
+   -Method: POST
+   -Input : { 
           "name":String,
           "email":String,
           "password":String
         }
 
 #Category Listing
-Endpoint: /api/categories
-Method: GET
-Description: Get a list of categories.
+  -Endpoint: /api/categories
+   -Method: GET
+   -Description: Get a list of categories.
 
 Product Listing
 Endpoint: /api/products/category/:categoryId
