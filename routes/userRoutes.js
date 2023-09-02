@@ -1,4 +1,4 @@
-const {Usermodel}= require("../models/usermodel");
+const {Usermodel}= require("../models/Usermodel");
 const bcrypt= require("bcrypt");
 const express= require("express");
 const jwt= require("jsonwebtoken");
@@ -30,7 +30,7 @@ userRoute.post("/login", async(req,res)=>{
         if(user.length>0){
             bcrypt.compare(password,user[0].password, (err,result)=>{
                 if(result){
-                    const token = jwt.sign({userID:user._id},"masai",{expiresIn:"1d"});
+                    const token = jwt.sign({userID:user[0]._id},"masai",{expiresIn:"1d"});
                     res.status(200).send({"msg":"login Successful", "token":token});
                 }else{
                     res.status(400).send("wrong Credentials")
